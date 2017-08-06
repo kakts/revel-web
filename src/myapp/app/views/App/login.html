@@ -1,0 +1,13 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<h1>Hello {{.myName}}</h1>
+<a href="/">Back to form</a>
+
+<form action="/App/Login" method="POST">
+    <input type="text" name="id"/><br/>
+    <input type="password" name="pass"/><br/>
+    <input type="submit" value="" />
+</form>
+
+{{template "footer.html" .}}
