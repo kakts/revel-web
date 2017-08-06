@@ -19,7 +19,9 @@
 </div>
 
 <form action="/App/Hello" method="GET">
-    <input type="text" name="myName" /><br/>
+  {{with $field := field "myName" .}}
+    <input type="text" name="{{$field.Name}}" value="{{$field.Flash}}" /><br/>
+  {{end}}
     <input type="submit" value="Say hello!" />
 </form>
 
