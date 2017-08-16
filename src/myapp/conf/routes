@@ -13,6 +13,8 @@ GET     /hello                                  HelloApp.Index
 GET     /login                                  App.Login
 POST    /login                                  App.DoLogin
 
+GET     /user/:id                                 User.Index
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

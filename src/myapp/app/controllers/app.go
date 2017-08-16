@@ -1,8 +1,7 @@
 package controllers
 
 import (
-	"log"
-
+    "log"
 	"github.com/revel/revel"
 )
 
@@ -31,7 +30,6 @@ func (c App) Hello(myName string) revel.Result {
 // GET:/login
 // TODO
 func (c App) Login(id string, pass string) revel.Result {
-	log.Println("test")
 	if c.Validation.HasErrors() {
 		log.Println("error")
 		c.Validation.Keep()
@@ -48,7 +46,6 @@ func (c App) Login(id string, pass string) revel.Result {
 // POST:/login
 // TODO
 func (c App) DoLogin(id string, pass string) revel.Result {
-	log.Println("POST:/login")
 	// validation for id
 	c.Validation.Required(id).Message("id is required")
 	c.Validation.MinSize(id, 8).Message("Id should be over 8 characters")
