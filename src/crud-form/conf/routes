@@ -4,12 +4,14 @@
 #
 
 module:testrunner
-# module:jobs
+module:jobs
 
 
 GET     /                                       App.Index
 POST    /test                                   App.Test
 
+GET     /register                               App.Register
+POST    /register                               App.SaveUser
 
 #GET     /user                                   User.Index
 #POST    /user                                   User.Insert
