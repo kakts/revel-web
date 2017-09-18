@@ -5,7 +5,7 @@
 
 <!-- Application.SaveUserでユーザデータをセーブする -->
 <form action="{{url "App.SaveUser"}}" method="POST">
-  {{with $field := field "user.Username" .}}
+  {{with $field := field "user.UserId" .}}
     <p class="{{$field.ErrorClass}}">
       <strong>Username:</strong>
       <input type="text" name="{{$field.Name}}" size="16" value="{{$field.Flash}}"> *

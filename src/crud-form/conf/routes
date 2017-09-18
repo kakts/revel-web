@@ -16,6 +16,9 @@ POST    /register                               App.SaveUser
 #GET     /user                                   User.Index
 #POST    /user                                   User.Insert
 
+//POST     /login                                  App.Login
+//GET      /logout                                 App.Logout
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
