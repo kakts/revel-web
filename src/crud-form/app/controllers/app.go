@@ -7,6 +7,7 @@ import (
 
     "crud-form/app/models"
     "crud-form/app/routes"
+    "crud-form/app/services"
 )
 
 type App struct {
@@ -46,7 +47,7 @@ func (c App) SaveUser(user models.User, verifyPassword string) revel.Result {
         c.FlashParams()
         return c.Redirect(routes.App.Index())
     }
-    results, errCode := findOne(user.UserId, "testRevel", "User")
+    results, errCode := services.FindOne(user.UserId, "testRevel", "User")
     if errCode != "" {
         panic(errCode)
     }
@@ -58,7 +59,7 @@ func (c App) SaveUser(user models.User, verifyPassword string) revel.Result {
     }
 
     // TODO hashedpassword
-    InsertEntity("testRevel", "User", user)
+    services.InsertEntity("testRevel", "User", user)
 
     c.Session["user"] = user.Name
     c.Flash.Success("Welcome, " + user.Name)
